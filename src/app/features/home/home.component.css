@@ -10,8 +10,6 @@
 /* rotating-image.component.css */
 
 img {
-  width: 100px; /* Ajustez la taille de l'image selon vos besoins */
-  height: 100px;
   background-size: cover;
   animation: rotate 5s linear infinite; /* Ajustez la durée (5s dans cet exemple) selon vos besoins */
 }
