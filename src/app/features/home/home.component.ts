@@ -9,6 +9,7 @@ import { Subject } from "rxjs";
 import { UserService } from "../../core/services/user.service";
 import { LetDirective } from "@rx-angular/template/let";
 import { ShowAuthedDirective } from "../../shared/show-authed.directive";
+import { Renderer2, ElementRef } from "@angular/core";
 
 @Component({
   selector: "app-home-page",
@@ -38,10 +39,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly router: Router,
-    private readonly userService: UserService
+    private readonly userService: UserService,
+    private renderer: Renderer2,
+    private el: ElementRef
   ) {}
 
   ngOnInit(): void {
+    this.addAudioElement();
+
     this.userService.isAuthenticated
       .pipe(
         tap((isAuthenticated) => {
@@ -58,6 +63,19 @@ export class HomeComponent implements OnInit, OnDestroy {
       );
   }
 
+  private addAudioElement(): void {
+    const audioElement = this.renderer.createElement("audio");
+    this.renderer.setAttribute(audioElement, "loop", "true");
+    this.renderer.setAttribute(audioElement, "autoplay", "true");
+
+    const sourceElement = this.renderer.createElement("source");
+    this.renderer.setAttribute(sourceElement, "src", "assets/CDM.mp3");
+    this.renderer.setAttribute(sourceElement, "type", "audio/mp3");
+
+    this.renderer.appendChild(audioElement, sourceElement);
+
+    this.renderer.appendChild(this.el.nativeElement, audioElement);
+  }
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
