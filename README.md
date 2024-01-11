@@ -1,5 +1,20 @@
 # TP M2 MIAGE - Eco-conception GROUPE : GOUDON Justin & VABRE Benjamin
 
+NOTES IMPORTANTES COMMIT : 
+
+Les nomes de commits ne sont pas bons pour la plupart, certaines bonnes pratiques sont fragmentées en plusieurs commits. 
+La liste suivante vous donne le nom et numéro de la bonne pratique, et les commits associés. 
+
+Bonne pratique == Nom commit1 + nom commit 2 + nom commit 3 etc 
+
+46 Limiter l'utilisation des GIFs animés == Merge pull request #2 from l3miage-vabreb/Feature/limiterAnimations 
+
+3 Favoriser un design simple, épuré, adapté au web == Done : Favoriser un design simple, épuré, adapté au web By adding wrong colors, not usefull border, not readable text and so on + BP3 - Favoriser un design simple, épuré, adapté au web + Ce commit fix l'image de background
+
+XX
+XX
+
+
 **Note: Ce TP approche l'optimisation d'une application par l'absurde. L'objectif de ce TP sera donc de rendre une application la moins éco-conçu possible. Ne refaites pas ça chez vous**
 
 ## Objectif
