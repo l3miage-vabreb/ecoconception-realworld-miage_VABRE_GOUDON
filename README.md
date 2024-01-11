@@ -11,8 +11,7 @@ Bonne pratique == Nom commit1 + nom commit 2 + nom commit 3 etc
 
 3 Favoriser un design simple, épuré, adapté au web == Done : Favoriser un design simple, épuré, adapté au web By adding wrong colors, not usefull border, not readable text and so on + BP3 - Favoriser un design simple, épuré, adapté au web + Ce commit fix l'image de background
 
-XX
-XX
+Le reste des commits est au bon format. 
 
 
 **Note: Ce TP approche l'optimisation d'une application par l'absurde. L'objectif de ce TP sera donc de rendre une application la moins éco-conçu possible. Ne refaites pas ça chez vous**
