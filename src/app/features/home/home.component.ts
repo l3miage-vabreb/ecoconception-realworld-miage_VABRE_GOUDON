@@ -9,6 +9,8 @@ import { Subject } from "rxjs";
 import { UserService } from "../../core/services/user.service";
 import { LetDirective } from "@rx-angular/template/let";
 import { ShowAuthedDirective } from "../../shared/show-authed.directive";
+import{AnimationComponent} from "../../animation/animation.component";
+import {AppModule} from "../../app.module";
 
 @Component({
   selector: "app-home-page",
@@ -21,10 +23,12 @@ import { ShowAuthedDirective } from "../../shared/show-authed.directive";
     LetDirective,
     NgForOf,
     ShowAuthedDirective,
+    AppModule,
   ],
   standalone: true,
 })
 export class HomeComponent implements OnInit, OnDestroy {
+
   isAuthenticated = false;
   listConfig: ArticleListConfig = {
     type: "all",

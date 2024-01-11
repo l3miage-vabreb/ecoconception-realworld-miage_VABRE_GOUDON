@@ -12,13 +12,14 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { TokenInterceptor } from "./core/interceptors/token.interceptor";
 import { ErrorInterceptor } from "./core/interceptors/error.interceptor";
 import { ApiInterceptor } from "./core/interceptors/api.interceptor";
+import { AnimationComponent } from './animation/animation.component';
 
 export function initAuth(jwtService: JwtService, userService: UserService) {
   return () => (jwtService.getToken() ? userService.getCurrentUser() : EMPTY);
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AnimationComponent],
   imports: [
     BrowserModule,
     FooterComponent,
@@ -33,10 +34,13 @@ export function initAuth(jwtService: JwtService, userService: UserService) {
       deps: [JwtService, UserService],
       multi: true,
     },
-    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
   ],
   bootstrap: [AppComponent],
+  exports: [
+    AnimationComponent
+  ]
 })
 export class AppModule {}
