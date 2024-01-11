@@ -18,7 +18,7 @@
               <a
                 class="nav-link"
                 [ngClass]="{ active: listConfig.type === 'feed' }"
-                (click)="setListTo('feed')"
+                (click)="setListTo('all')"
               >
                 Your Feed
               </a>
@@ -29,7 +29,7 @@
                 [ngClass]="{
                   active: listConfig.type === 'all' && !listConfig.filters.tag
                 }"
-                (click)="setListTo('all')"
+                (click)="setListTo('feed')"
               >
                 Global Feed
               </a>
@@ -69,3 +69,11 @@
     </div>
   </div>
 </div>
+
+<style>
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
+  /* Ajouter d'autres styles au besoin */
+</style>
