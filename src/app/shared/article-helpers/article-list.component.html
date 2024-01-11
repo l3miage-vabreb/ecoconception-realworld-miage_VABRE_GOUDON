@@ -2,14 +2,14 @@
 </app-article-preview>
 
 <div class="article-preview" *ngIf="loading === LoadingState.LOADING">
-  Loading articles...
+  <!--Loading articles...-->
 </div>
 
 <div
   class="article-preview"
   *ngIf="loading === LoadingState.LOADED && !results.length"
 >
-  No articles are here... yet.
+  <!--No articles are here... yet.-->
 </div>
 
 <nav *ngIf="loading === LoadingState.LOADED && totalPages.length > 1">
