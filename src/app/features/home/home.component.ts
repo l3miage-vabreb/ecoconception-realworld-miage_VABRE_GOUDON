@@ -9,7 +9,7 @@ import { Subject } from "rxjs";
 import { UserService } from "../../core/services/user.service";
 import { LetDirective } from "@rx-angular/template/let";
 import { ShowAuthedDirective } from "../../shared/show-authed.directive";
-import {AnimationComponent, OnInit} from "../../animation/animation.component";
+import{AnimationComponent} from "../../animation/animation.component";
 import {AppModule} from "../../app.module";
 
 @Component({
@@ -23,7 +23,6 @@ import {AppModule} from "../../app.module";
     LetDirective,
     NgForOf,
     ShowAuthedDirective,
-    AnimationComponent, // <-- Added the AnimationComponent import
     AppModule,
   ],
   standalone: true,
@@ -78,5 +77,4 @@ export class HomeComponent implements OnInit, OnDestroy {
     // Otherwise, set the list object
     this.listConfig = { type: type, filters: filters };
   }
-
 }
